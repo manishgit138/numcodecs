@@ -16,7 +16,7 @@ jobs:
         #    arch: aarch64
     env:
       CIBW_ARCHS_LINUX: ${{matrix.arch}}
-      #CIBW_BEFORE_BUILD: "yum -y update && yum install -y gcc"
+      CIBW_BEFORE_BUILD: "yum -y update && yum -y install gcc-aarch64-linux-gnu"
       CIBW_TEST_COMMAND: pytest --pyargs numcodecs
       CIBW_TEST_REQUIRES: pytest
       CIBW_SKIP: "*27* pp* *35*"
